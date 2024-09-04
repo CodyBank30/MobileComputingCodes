@@ -81,23 +81,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               )
                           ),
                         ),
-
                         SizedBox(height: 30,),
-
-                        Container(
-                          alignment: Alignment.center,
-                          height: Get.height*0.05,
-                          width: Get.width,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.red,
-                          ),
-                          child: Text("Submit",style: TextStyle(color: Colors.white),),
-                        ),
                         Obx(() => register.isLoading.value?CircularProgressIndicator():
                         InkWell(
                           onTap: (){
                             register.registerCont();
+
                           },
                           child: Container(
                             alignment: Alignment.center,
