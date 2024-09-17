@@ -25,8 +25,10 @@ class ApiServices{
     }
   }
 
+
+
   Future<GetTreeModel>getTree()async{
-    final value_user = await dio.get("${baseUrl}get_tree_plant",);
+    final value_user = await dio.get("${baseUrl}get_tree_plant");
     if(value_user.statusCode == 200){
       final result_user = GetTreeModel.fromJson(value_user.data);
       return result_user;

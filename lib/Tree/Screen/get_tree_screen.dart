@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controller/get_tree_controller.dart';
 
 class GetTreeScreen extends StatefulWidget {
@@ -14,7 +13,8 @@ class _GetTreeScreenState extends State<GetTreeScreen> {
   var getTree = Get.put(GetTreeController());
   @override
   void initState() {
-    getTree.getTreeCont();
+    getTree.
+    getTreeCont();
     // TODO: implement initState
     super.initState();
   }
@@ -60,7 +60,8 @@ class _GetTreeScreenState extends State<GetTreeScreen> {
                                 Container(
                                   width: Get.width*0.5,
                                     height: Get.height*0.03,
-                                    child: Text(plant.description ?? 'No Description',overflow:TextOverflow.ellipsis )),
+                                    child: Text(plant.description ?? 'No Description',
+                                         overflow:TextOverflow.ellipsis )),
                               ],
                             ),
                           ],
