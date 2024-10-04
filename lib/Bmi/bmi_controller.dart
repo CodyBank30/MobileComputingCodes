@@ -33,7 +33,7 @@ class BMIController extends GetxController {
       }
 
       // Debugging log
-      //print("BMI Status: ${status.value}");
+      // print("BMI Status: ${status.value}");
     } else {
       // If weight or height are invalid, reset BMI and status
       bmi.value = 0.0;

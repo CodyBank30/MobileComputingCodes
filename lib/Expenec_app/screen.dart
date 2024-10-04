@@ -14,7 +14,7 @@ class expence_screen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense App'),
+        title: const Text('Expense App'),
         backgroundColor: Colors.teal, // App bar color
       ),
       body: Padding(
@@ -46,39 +46,39 @@ class expence_screen extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, // Background color
-                    onPrimary: Colors.white, // Text color
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.blue, // Text color
                   ),
-                  child: Text('Pick Date'),
+                  child: const Text('Pick Date'),
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
-            Text('Enter Expense Details:',
+            const SizedBox(height: 16.0),
+            const Text('Enter Expense Details:',
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
 
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextField(
               controller: titleController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Title',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextField(
               controller: amountController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Amount',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -87,8 +87,10 @@ class expence_screen extends StatelessWidget {
                     final amountString = amountController.text.trim();
 
                     if (title.isEmpty || amountString.isEmpty) {
-                      Get.snackbar('Invalid Input',
-                          'Please enter both title and amount');
+                      Get.snackbar(
+                          'Invalid Input', 'Please enter both title and amount',
+                          backgroundColor: Colors.black,
+                          colorText: Colors.white);
                       return;
                     }
 
@@ -96,7 +98,9 @@ class expence_screen extends StatelessWidget {
 
                     if (amount == null) {
                       Get.snackbar(
-                          'Invalid Amount', 'Please enter a valid amount');
+                          'Invalid Amount', 'Please enter a valid amount',
+                          backgroundColor: Colors.black,
+                          colorText: Colors.white);
                       return;
                     }
 
@@ -105,33 +109,31 @@ class expence_screen extends StatelessWidget {
                     titleController.clear();
                     amountController.clear();
                   } else {
-                    Get.snackbar(
-                      'No Date Selected',
-                      'Please select a date before adding an expense',
-                    );
+                    Get.snackbar('No Date Selected',
+                        'Please select a date before adding an expense',
+                        backgroundColor: Colors.black, colorText: Colors.white);
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green, // Background color
-                  onPrimary: Colors.white, // Text color
+                  foregroundColor: Colors.white, backgroundColor: Colors.green, // Text color
                 ),
-                child: Text('Add Expense'),
+                child: const Text('Add Expense'),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Center(
               child: ElevatedButton(
                 onPressed: () {
                   Get.to(() => ExpenseListPage());
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.orange, // Background color
-                  onPrimary: Colors.white, // Text color
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.orange, // Text color
                 ),
-                child: Text('View All Expenses'),
+                child: const Text('View All Expenses'),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             // Expanded(
             //   child: Obx(() {
             //     return ListView.builder(

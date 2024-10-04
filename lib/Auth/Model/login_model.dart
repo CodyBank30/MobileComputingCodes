@@ -38,12 +38,12 @@ class UserData {
 
   UserData(
       {this.id,
-        this.name,
-        this.surName,
-        this.email,
-        this.password,
-        this.date,
-        this.time});
+      this.name,
+      this.surName,
+      this.email,
+      this.password,
+      this.date,
+      this.time});
 
   UserData.fromJson(Map<String, dynamic> json) {
     id = json['id'];

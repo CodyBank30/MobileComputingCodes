@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../ApiScrevices/Api_screvices.dart';
 import '../../Tree/Screen/get_tree_screen.dart';
 import '../Model/register_model.dart';

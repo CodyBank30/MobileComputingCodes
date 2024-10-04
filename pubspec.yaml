@@ -37,6 +37,8 @@ dependencies:
   dio:
   get:
   http:
+  flutter_screenutil: ^5.0.0
+  day_night_switcher:
 dev_dependencies:
   flutter_test:
     sdk: flutter
